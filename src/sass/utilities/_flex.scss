@@ -1,24 +1,9 @@
+@use '../abstracts/' as *;
+
 /*********** FLEX ************/
 %flex {
   display: flex;
   gap: var(--gap, var(--spacer));
-}
-
-
-
-@mixin flex($align: start, $justify: flex-start) {
-  @extend %flex;
-  align-items: $align;
-  justify-content: $justify;
-}
-
-body {
-  @include flex(center, center);
-}
-
-.card {
-  background: lightblue;
-  @include flex;
 }
 
 .split {

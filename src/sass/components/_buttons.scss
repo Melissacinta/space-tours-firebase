@@ -1,6 +1,9 @@
-@use '../abstracts/mq-manager' as mq;
-/*********** BUTTONS ************/
+/* -------------------------------- */
+/* COMPONENTS                       */
+/* -------------------------------- */
 
+@use '../abstracts' as *;
+/*********** BUTTONS ************/
 %btn {
   display: inline-block;
   border: none;

@@ -3,7 +3,7 @@
 body {
   font-family: var(--ff-primary);
   font-weight: var(--fw-400);
-  font-size: var(--fs-300);
+  font-size: var(--fs-400);
 }
 
 code {
@@ -12,38 +12,70 @@ code {
 }
 
 %heading {
-  color: var(--clr-txt-500);
+  color: hsl(var(--clr-neutral-100));
   font-weight: var(--fw-400);
+  text-transform: uppercase;
 }
 
+%font-primary {
+  font-family: var(--ff-primary);
+}
+%font-secondary {
+  font-family: var(--ff-secondary);
+}
+%font-accent {
+  font-family: var(--ff-accent);
+}
+
+/**** MAIN HEADINGS ****/
 .heading-1 {
   @extend %heading;
-  font-size: 4rem;
+  @extend %font-secondary;
+  font-size: 15rem;
 }
 .heading-2 {
   @extend %heading;
-  font-size: 3.2rem;
+  @extend %font-secondary;
+  font-size: 10rem;
 }
 .heading-3 {
   @extend %heading;
-  font-size: 2rem;
+  @extend %font-secondary;
+  font-size: 5.6rem;
 }
 .heading-4 {
   @extend %heading;
-  font-size: 1.7rem;
+  @extend %font-secondary;
+  font-size: 3.2rem;
 }
 .heading-5 {
   @extend %heading;
-  font-size: 1.333rem;
+  @extend %font-primary;
+  font-size: 2.8rem;
+  letter-spacing: 4.75px;
 }
 
-.lead {
-  margin-bottom: 1.25rem;
-  font-size: 1.8rem;
+/**** SUB HEADINGS ****/
+.heading-6 {
+  @extend %heading;
+  @extend %font-secondary;
+  font-size: 2.8rem;
 }
-p {
-  color: var(--clr-txt-400);
+
+.heading-7 {
+  @extend %heading;
+  @extend %font-primary;
+  font-size: 2.8rem;
+  letter-spacing: 2.35px;
 }
+
+.nav-text {
+  @extend %heading;
+  @extend %font-primary;
+  font-size: 1.6rem;
+  letter-spacing: 2.7px;
+}
+
 small,
 .text_small {
   font-size: 0.75rem;

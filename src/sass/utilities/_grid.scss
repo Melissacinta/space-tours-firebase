@@ -1,4 +1,11 @@
+@use '../abstracts/' as *;
+
+/*********** GRID ************/
 %grid {
   display: grid;
   gap: var(--gap, var(--spacer));
 }
+
+// body {
+//   @include grid(repeat(3, 1fr), repeat(3, 1fr));
+// }
