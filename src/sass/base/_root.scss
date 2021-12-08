@@ -45,8 +45,14 @@ Version: 01
       @each $prop, $value in $property {
         --fs-#{$prop}: #{$value};
       }
+    } @else if $screen-size == medium {
+      @include media('>=desk', 'screen') {
+        @each $prop, $value in $property {
+          --fs-#{$prop}: #{$value};
+        }
+      }
     } @else {
-      @include media('>=desk') {
+      @include media('>=large', 'screen') {
         @each $prop, $value in $property {
           --fs-#{$prop}: #{$value};
         }
