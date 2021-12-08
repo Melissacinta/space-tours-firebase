@@ -1,0 +1,60 @@
+@use '../abstracts' as *;
+/*!Theme Name:
+Theme URI: https://
+Repository: https://github.com/Melissacinta/space-tours-firebase
+Description: A Space Tourism project from frontend mentor challeges
+Authors' Names: Chukwuzube Samuel and Aguluka Ngozi
+Authors' Monikers: pHoeniX-svg and Melissacinta
+Version: 01
+*/
+
+/* ////////////////////////////////////////////
+// BASE CONFIGURATION
+*/
+:root {
+  // outputs the theme colors as css variables
+  --ff-primary: #{$ff-primary};
+  --ff-secondary: #{$ff-secondary};
+  --ff-accent: #{$ff-accent};
+
+  --spacer: #{$spacer};
+
+  @each $color, $shade in $colors {
+    @each $property, $value in $shade {
+      --clr-#{$color}-#{$property}: #{$value};
+    }
+  }
+
+  --clr-dark: 230 35% 7%;
+  --clr-light: 231 77% 90%;
+  --clr-white: 0 0% 100%;
+
+  --clr-success: hsl(134, 61%, 41%);
+  --clr-danger: hsl(354, 70%, 54%);
+
+  // outputs the font-sizes as css custom variables
+  @each $weight, $value in $font-weights {
+    --fw-#{$weight}: #{$value};
+  }
+
+  // outputs the font-sizes as css custom variables
+  @each $screen-size, $property in $type-scale {
+    @if $screen-size == small {
+      @each $prop, $value in $property {
+        --fs-#{$prop}: #{$value};
+      }
+    } @else {
+      @include media('>=desk') {
+        @each $prop, $value in $property {
+          --fs-#{$prop}: #{$value};
+        }
+      }
+    }
+  }
+  --fs-xl: clamp(4.5rem, 8vw, 9rem);
+  --b-radius: 0.8rem;
+  --spacer: 2rem;
+  --spacing: 0.02em;
+  --transition: all 0.2s ease-in;
+  --max-width: 130rem;
+}
