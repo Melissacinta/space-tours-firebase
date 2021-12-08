@@ -17,8 +17,6 @@ Version: 01
   --ff-secondary: #{$ff-secondary};
   --ff-accent: #{$ff-accent};
 
-  --spacer: #{$spacer};
-
   @each $color, $shade in $colors {
     @each $property, $value in $shade {
       --clr-#{$color}-#{$property}: #{$value};
@@ -52,9 +50,10 @@ Version: 01
     }
   }
   --fs-xl: clamp(4.5rem, 8vw, 9rem);
-  --b-radius: 0.8rem;
-  --spacer: 2rem;
+  --gap: #{$gap};
+  --spacer: #{$spacer};
   --spacing: 0.02em;
+  --b-radius: 0.8rem;
   --transition: all 0.2s ease-in;
   --max-width: 130rem;
 }
