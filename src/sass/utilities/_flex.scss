@@ -6,7 +6,7 @@
 
 
 
-@mixin flex($align: start, $justify: between) {
+@mixin flex($align: start, $justify: flex-start) {
   @extend %flex;
   align-items: $align;
   justify-content: $justify;
