@@ -6,11 +6,23 @@
   gap: var(--gap, var(--spacer));
 }
 
+@mixin flex($align: null, $justify: null, $flex-direction: null, $wrap: null) {
+  @extend %flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $flex-direction;
+  flex-wrap: $wrap;
+}
+
+.flex {
+  @extend %flex;
+}
+
 .split {
-  --width: 72rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  max-width: var(--width, 80rem);
 
   @media (min-width: 60em) {
     flex-direction: row;
