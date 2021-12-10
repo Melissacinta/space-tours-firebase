@@ -5,13 +5,11 @@
 @use '../abstracts' as *;
 
 @each $color, $shade in $colors {
-  @each $property, $value in $shade {
-    .text-#{$color}-#{$property} {
-      color: hsl(var(--clr-#{$color}-#{$property}));
-    }
+  .text-#{$color} {
+    color: hsl(var(--clr-#{$color}));
+  }
 
-    .bg-#{$color}-#{$property} {
-      background-color: hsl(var(--clr-#{$color}-#{$property}));
-    }
+  .bg-#{$color} {
+    background-color: hsl(var(--clr-#{$color}));
   }
 }

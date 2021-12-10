@@ -69,8 +69,8 @@ a:not(.btn) {
 
   &:hover,
   &:focus {
-    -webkit-text-decoration-color: var(--clr-accent-400);
-    text-decoration-color: var(--clr-accent-400);
+    -webkit-text-decoration-color: var(--clr-accent);
+    text-decoration-color: var(--clr-accent);
   }
 }
 

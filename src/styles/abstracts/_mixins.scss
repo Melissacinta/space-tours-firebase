@@ -22,44 +22,6 @@
   text-align: $pos;
 }
 
-%flex {
-  display: flex;
-  gap: var(--gap, var(--spacer));
-}
-%grid {
-  display: grid;
-  gap: var(--gap, var(--spacer));
-}
-
-////////////////////////////////////////////
-// MIXINS: Flex
-
-@mixin flex($align: null, $justify: null, $flex-direction: null, $wrap: null) {
-  @extend %flex;
-  align-items: $align;
-  justify-content: $justify;
-  flex-direction: $flex-direction;
-  flex-wrap: $wrap;
-}
-
-////////////////////////////////////////////
-// MIXINS: Grid
-@mixin grid($g-rows: null, $g-cols: null) {
-  @extend %grid;
-  grid-template-rows: $g-rows;
-  grid-template-columns: $g-cols;
-}
-
-@mixin grid-child(
-  $col-start: null,
-  $col-end: null,
-  $row-start: null,
-  $row-end: null
-) {
-  grid-column: #{$col-start}/#{$col-end};
-  grid-row: #{$row-start}/#{$row-end};
-}
-
 ////////////////////////////////////////////
 // MIXINS: Cover Mixin
 @mixin coverer {
