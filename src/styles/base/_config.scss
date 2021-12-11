@@ -3,8 +3,9 @@
 
 body {
   position: relative;
-  color: hsl(var(--clr-neutral-100));
-  background-color: hsl(var(--clr-primary-100));
+  color: hsl(var(--clr-light));
+  background-color: hsl(var(--clr-dark));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }

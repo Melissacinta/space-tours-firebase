@@ -1,0 +1,67 @@
+@use '../utilities/' as *;
+
+.design-system {
+  &__header {
+    @include flex(center, space-between);
+    margin-block: 2em 3.5em;
+  }
+}
+
+.section {
+  --flow-spacer: 3em;
+  margin-bottom: 5em;
+}
+
+.numbered-title {
+  font-family: var(--ff-sans-cond);
+  font-size: var(--fs-500);
+
+  & > span {
+    margin-right: 0.5em;
+    font-weight: var(--fw-700);
+    color: hsl(var(--clr-light) / 0.25);
+  }
+}
+
+.colors {
+  --gap: 2em 3em;
+  @include flex(null, null, null, wrap);
+}
+
+.color {
+  --flow-spacer: 1rem;
+  flex-grow: 1;
+  flex-basis: 20rem;
+
+  & > :nth-child(2) {
+    --flow-spacer: 2em;
+  }
+
+  P > span {
+    margin-right: 1rem;
+  }
+}
+
+.box {
+  padding-block: 8rem 1.6rem;
+  padding-inline: 1.6rem;
+  border: 1px solid white;
+}
+
+.col {
+  --flow-spacer: 4rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.ls-1 {
+  letter-spacing: 4.75px;
+}
+.ls-2 {
+  letter-spacing: 2.7px;
+}
+.ls-3 {
+  letter-spacing: 2.35px;
+}
