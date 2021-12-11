@@ -1,11 +1,9 @@
-const Explore = ({ txt = '', bg = '', hex = '', rgb = '', hsl = '' }) => {
+const Explore = ({ txt = '', bg = '', content = '', state = '', classname = '' }) => {
   return (
-    <div className="color flow">
-      <a href="#" className={`${bg} ${txt} ff-serif fs-500`}>{txt}</a>
-      <div className={`box ${bg} ${txt} ff-serif fs-500`}>{hex}</div>
+    <div className="flow">
+      <a href="#" className={`btn-explore ${classname} ${bg} ${txt} ff-serif fs-600`}>{content}</a>
       <p>
-        <span className="text-accent">RGB</span>
-        {rgb}
+        <span className={`${classname} text-accent`}>Landing Page Main Button - {state}</span>
       </p>
     </div>
   );
