@@ -1,5 +1,8 @@
 import siteLogo from '../assets/shared/logo.svg';
 import Color from './Color';
+import Explore from './Explore';
+import NavBar from './NavBar';
+import Tabs from './Tabs';
 
 const DesignSystem = () => {
   return (
@@ -137,11 +140,38 @@ const DesignSystem = () => {
         </div>
       </section>
 
-      {/* <section className="section section-interactive flow">
+      <section className="section section-interactive flow">
         <h2 className="numbered-title">
           <span>03</span> INTERACTIVE ELEMENTS
         </h2>
-      </section> */}
+        <NavBar
+          txt="uppercase text-light ls-2"
+        />
+        <div className="even-columns">
+          <div className="col explore">
+            <Explore
+              txt="uppercase"
+              bg="bg-light"
+              content="Explore"
+              state="Idle"
+              classname=""
+            />
+
+            <Explore
+              txt="uppercase"
+              bg="bg-light"
+              content="Explore"
+              state="Hover"
+              classname='hovered'
+            />
+          </div>
+          <div className="col flow flex navs">
+            <Tabs
+              txt="uppercase text-accent ls-2"
+            />
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

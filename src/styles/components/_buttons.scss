@@ -27,4 +27,39 @@
 
 .btn {
   @extend %btn;
+
+  &-explore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 274px;
+    width: 274px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    color: hsl(var(--clr-dark)) !important;
+
+    &.hovered::before,
+    &::before {
+      content: ' ';
+      background-color: rgba(255, 255, 255, 10.36%);
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 500ms linear, transform 750ms ease-in-out;
+    }
+
+    &.hovered::before,
+    &:focus::before,
+    &:hover::before {
+      opacity: 1;
+      transform: scale(1.5);
+    }
+  }
+  &-tab {
+    border-radius: 0;
+  }
 }
