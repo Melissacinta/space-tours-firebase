@@ -17,9 +17,6 @@ Version: 01
 */
 :root {
   // outputs the theme colors as css variables
-  --ff-sans: #{$ff-sans};
-  --ff-serif: #{$ff-serif};
-  --ff-sans-cond: #{$ff-sans-cond};
 
   @each $color, $shade in $colors {
     --clr-#{$color}: #{$shade};
@@ -50,7 +47,9 @@ Version: 01
       }
     }
   }
-  --fs-xl: clamp(4.5rem, 8vw, 9rem);
+  --ff-sans: #{$ff-sans};
+  --ff-serif: #{$ff-serif};
+  --ff-sans-cond: #{$ff-sans-cond};
   --gap: #{$gap};
   --spacer: #{$spacer};
   --spacing: 0.02em;
