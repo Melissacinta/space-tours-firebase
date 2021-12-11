@@ -8,7 +8,7 @@ $type-scale: (
     600: 1.6rem,
     700: 2.4rem,
     800: 5.6rem,
-    900: clamp(8rem, 8vw + 1.6rem, 15rem),
+    900: 8rem,
   ),
   medium: (
     400: 1.6rem,
@@ -16,6 +16,7 @@ $type-scale: (
     600: 2.4rem,
     700: 4rem,
     800: 8rem,
+    900: calc(8vw + 1.6rem),
   ),
   large: (
     400: 1.8rem,
@@ -23,6 +24,7 @@ $type-scale: (
     600: 3.2rem,
     700: 5.6rem,
     800: 10rem,
+    900: 15rem,
   ),
 );
 
