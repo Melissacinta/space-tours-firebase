@@ -172,6 +172,7 @@ const DesignSystem = () => {
               <Tabs
                 txt="uppercase text-accent ls-2"
               />
+              
               <Dots />
 
               <Numbered
