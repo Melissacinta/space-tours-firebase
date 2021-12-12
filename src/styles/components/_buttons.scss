@@ -62,4 +62,42 @@
   &-tab {
     border-radius: 0;
   }
+
+  &-dot {
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: hsl(var(--clr-light) / 0.25);
+
+    &:hover,
+    &:focus,
+    &.hovered {
+      background-color: hsl(var(--clr-light) / 0.5);
+    }
+
+    &.active,
+    &[aria-selected='true'] {
+      background-color: hsl(var(--clr-light) / 1);
+    }
+  }
+
+  &-numbered {
+    aspect-ratio: 1;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 100%;
+    border: 2px solid hsl(var(--clr-light) / 0.25);
+
+    &:hover,
+    &:focus,
+    &.hovered {
+      border: 2px solid hsl(var(--clr-light) / 0.5);
+    }
+
+    &.active,
+    &[aria-selected='true'] {
+      color: hsl(var(--clr-dark) / 1);
+      background-color: hsl(var(--clr-light) / 1);
+      border: 2px solid hsl(var(--clr-light) / 1);
+    }
+  }
 }
