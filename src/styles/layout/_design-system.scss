@@ -1,6 +1,16 @@
 @use '../utilities/' as *;
+@use '../abstracts/' as *;
 
 .design-system {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 1)
+    ),
+    img('home/background-home-tablet.jpg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
   &__header {
     @include flex(center, space-between);
     margin-block: 2em 3.5em;
@@ -60,8 +70,68 @@
   letter-spacing: 4.75px;
 }
 .ls-2 {
-  letter-spacing: 2.7px;
+  letter-spacing: 2px;
 }
 .ls-3 {
   letter-spacing: 2.35px;
+}
+
+.explore {
+  @include flex(null, null, column);
+  --gap: 12rem;
+  & span.hovered {
+    display: inline-block;
+    margin-block-start: 4rem;
+  }
+
+  @include media('<=pad') {
+    align-items: center;
+    p{
+      text-align: center;
+    }
+  }
+}
+
+.nav-links {
+  --gap: 8rem;
+  --underline-gap: 3rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: hsl(var(--clr-light) / 0.04);
+  @include flex(null, center);
+
+  & a > span {
+    font-weight: var(--fw-700);
+    margin-right: 0.5em;
+  }
+}
+
+.underline-indicators > * {
+  border: 0;
+  cursor: pointer;
+  border-bottom: 3px solid hsl(var(--clr-light) / 0);
+  padding: var(--underline-gap, 1rem) 0;
+
+  &:hover,
+  &:focus,
+  &.hovered {
+    border-bottom: 3px solid hsl(var(--clr-light) / 0.5);
+  }
+}
+
+.underline-indicators > .active,
+.underline-indicators > [aria-selected='true'] {
+  color: hsl(var(--clr-light) / 1);
+  border-bottom: 3px solid hsl(var(--clr-light) / 1);
+}
+
+.numbered,
+.navs {
+  @include flex(center, null, column);
+}
+
+.dots > .flex,
+.tabs > .flex {
+  @include flex(null, center);
 }
