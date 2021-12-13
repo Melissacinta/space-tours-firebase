@@ -1,7 +1,7 @@
 //**** A function which adds the url for an asset automatically ****\\
 /// Base path for assets (fonts, images...),
 /// should not include trailing slash
-$asset-base-path: '../../' !default;
+$asset-base-path: '' !default;
 
 /// Asset URL builder
 @function asset($type, $filename) {

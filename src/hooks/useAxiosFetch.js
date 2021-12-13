@@ -1,36 +1,38 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const useAxiosFetch = (dataUrl) => {
+const useFetch = (dataUrl) => {
   const [data, setData] = useState([]);
-  const [fetchError, setFetchError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(null);
+
+  const getData = async (url, isMounted, source) => {
+    setIsLoading(true);
+
+    try {
+      const response = await axios.get(url, {
+        cancelToken: source.token,
+      });
+
+      if (isMounted) {
+        setData(response.data);
+        setIsError(null);
+      }
+    } catch (error) {
+      if (isMounted) {
+        setIsError(error.message);
+        setData([]);
+      }
+    } finally {
+      isMounted && setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
     let isMounted = true;
     const source = axios.CancelToken.source();
 
-    (async function fetchData(url) {
-      setIsLoading(true);
-
-      try {
-        const response = await axios.get(url, {
-          cancelToken: source.token,
-        });
-
-        if (isMounted) {
-          setData(response.data);
-          setFetchError(null);
-        }
-      } catch (error) {
-        if (isMounted) {
-          setFetchError(error.message);
-          setData([]);
-        }
-      } finally {
-        isMounted && setIsLoading(false) 
-      }
-    })(dataUrl);
+    getData(dataUrl, isMounted, source);
 
     return () => {
       isMounted = false;
@@ -38,7 +40,7 @@ const useAxiosFetch = (dataUrl) => {
     };
   }, [dataUrl]);
 
-  return { data, fetchError, isLoading };
+  return { data, isError, isLoading };
 };
 
-export default useAxiosFetch;
+export default useFetch;
