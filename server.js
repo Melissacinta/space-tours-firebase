@@ -8,57 +8,88 @@ require('dotenv').config();
 const dataPath = path.join(__dirname, 'database');
 const db = require(`${dataPath}/data.json`);
 
+function createId(end = 5) {
+  const str1 = Math.random().toString(36).substring(2, end);
+  const str2 = Math.random().toString(36).substring(2, end).toUpperCase();
+  const str3 = Math.random().toString(36).substring(2, end);
+
+  return `${str1}${str2}${str3}`;
+}
+
+// ***************** HOLY SHIT ***************** \\
+// literally going crazy: updated these @3AM  \\
 const routes = {
-  data: db,
-  crew: db.crew,
-  destinations: db.destinations,
-  technology: db.technology,
+  crewMembers: db.crew.map((member) => {
+    const id = createId(10);
+    return {
+      ...member,
+      id: id,
+    };
+  }),
+  newDestinations: db.destinations.map((destination) => {
+    const id = createId(10);
+    return {
+      ...destination,
+      id: id,
+    };
+  }),
+  newTechnology: db.technology.map((techno) => {
+    const id = createId(10);
+    return {
+      ...techno,
+      id: id,
+    };
+  }),
 };
 
-const { data, crew, destinations, technology } = routes;
-
-const htmlString = ` <h1>Hello and Welcome! to the Space Tourism Database. &female;</h1>
-      <p>Click on these links to view the data</p>
-      <li><a href="/data">ALL THE DATA</a></li>
-      <li><a href="/crew">THE CREW</a></li>
-      <li><a href="/destinations">THE DESTINATIONS</a></li>
-      <li><a href="/technology">THE TECHNOLOGY</a></li>
-      `;
+const { crewMembers, newDestinations, newTechnology } = routes;
 
 app.use(cors());
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
-  res.send(htmlString);
+  res.render('index', { title: 'Space Tourism Database' });
 });
 
 app.get('/data', (req, res) => {
-  res.send(data);
+  res.send([crewMembers, newDestinations, newTechnology]);
 });
 
+/* ************** GET CREWMEMBERS ************** */
 app.get('/crew', (req, res) => {
-  res.send(crew);
+  res.send(crewMembers);
 });
 app.get('/crew/:id', (req, res) => {
   const { id } = req.params;
-  res.send(crew[id]);
+  const foundMember = crewMembers.find((member) => member.id === id);
+  res.send(foundMember);
 });
 
+/* ************** GET DESTINATIONS ************** */
 app.get('/destinations', (req, res) => {
-  res.send(destinations);
+  res.send(newDestinations);
 });
 app.get('/destinations/:id', (req, res) => {
   const { id } = req.params;
-  res.send(destinations[id]);
+  const foundDestination = newDestinations.find(
+    (destination) => destination.id === id
+  );
+  res.send(foundDestination);
 });
 
+/* ************** GET TECNOLOGIES ************** */
 app.get('/technology', (req, res) => {
-  res.send(technology);
+  res.send(newTechnology);
 });
 app.get('/technology/:id', (req, res) => {
   const { id } = req.params;
-  res.send(technology[id]);
+  const foundTechnology = newTechnology.find((techno) => techno.id === id);
+  res.send(foundTechnology);
 });
 
+/* ************** SERVER TEST CHECK ************** */
 app.listen(PORT, () => {
   console.log(
     `The server is running on port ${PORT}. Visit http://localhost:${PORT} to view the data`
