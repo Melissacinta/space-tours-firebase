@@ -1,14 +1,14 @@
 import siteLogo from '../assets/shared/logo.svg';
 import Color from './Color';
+import Ellipses from './Ellipses';
 import Explore from './Explore';
 import NavBar from './NavBar';
-import Tabs from './Tabs';
-import Dots from './Dots';
 import Numbered from './Numbered';
+import Tabs from './Tabs';
 
 const DesignSystem = () => {
   return (
-    <div className='design-system'>
+    <div className="design-system">
       <div className="container flow">
         <header className="design-system__header">
           <img src={siteLogo} alt="site logo" className="design-logo" />
@@ -107,8 +107,8 @@ const DesignSystem = () => {
               </div>
               <div>
                 <p className="text-accent">
-                  Subheading 2 - Barlow Condensed Regular - 14px - 2.35 Character
-                  Space
+                  Subheading 2 - Barlow Condensed Regular - 14px - 2.35
+                  Character Space
                 </p>
                 <p className="fs-200 uppercase ff-sans-cond ls-3">
                   Avg. Distance
@@ -116,7 +116,8 @@ const DesignSystem = () => {
               </div>
               <div>
                 <p className="text-accent">
-                  Nav Text - Barlow Condensed Regular - 16px - 2.7 Character Space
+                  Nav Text - Barlow Condensed Regular - 16px - 2.7 Character
+                  Space
                 </p>
                 <p className="fs-300 uppercase ff-sans-cond ls-2">Europa</p>
               </div>
@@ -124,19 +125,20 @@ const DesignSystem = () => {
                 <p className="text-accent">Body Text</p>
                 <p>
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
-                  neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium,
-                  ligula sollicitudin laoreet viverra, tortor libero sodales leo,
-                  eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo.
+                  Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In
+                  nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed
+                  pretium, ligula sollicitudin laoreet viverra, tortor libero
+                  sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis.
+                  Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet,
+                  consectetuer adipiscing elit. Phasellus hendrerit.
+                  Pellentesque aliquet nibh nec urna. In nisi neque, aliquet
+                  vel, dapibus id, mattis vel, nisi. Sed pretium, ligula
+                  sollicitudin laoreet viverra, tortor libero sodales leo, eget
+                  blandit nunc tortor eu nibh. Nullam mollis. Ut justo.
                   Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer
-                  adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh
-                  nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel,
-                  nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor
-                  libero sodales leo, eget blandit nunc tortor eu nibh. Nullam
-                  mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit
-                  amet, consectetuer adipiscing elit. Phasellus hendrerit.
-                  Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel,
-                  dapibus id, mattis vel, nisi.
+                  adipiscing elit. Phasellus hendrerit. Pellentesque aliquet
+                  nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis
+                  vel, nisi.
                 </p>
               </div>
             </div>
@@ -147,9 +149,8 @@ const DesignSystem = () => {
           <h2 className="numbered-title">
             <span>03</span> INTERACTIVE ELEMENTS
           </h2>
-          <NavBar
-            txt="uppercase text-light ls-2"
-          />
+
+          <NavBar txt="uppercase text-light ls-2" />
           <div className="even-columns">
             <div className="col explore">
               <Explore
@@ -165,19 +166,14 @@ const DesignSystem = () => {
                 bg="bg-light"
                 content="Explore"
                 state="Hover"
-                classname='hovered'
+                classname="hovered"
               />
             </div>
-            <div className="col flow flex navs">
-              <Tabs
-                txt="uppercase text-accent ls-2"
-              />
-              
-              <Dots />
 
-              <Numbered
-                txt="uppercase text-accent ls-2"
-              />
+            <div className="col flow flex navs">
+              <Tabs txt="uppercase text-accent ls-2" />
+              <Ellipses />
+              <Numbered txt="uppercase text-accent ls-2" />
             </div>
           </div>
         </section>
