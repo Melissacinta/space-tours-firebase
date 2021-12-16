@@ -1,10 +1,3 @@
-import siteLogo from '../assets/shared/logo.svg';
-// import Color from './Color';
-// import Ellipses from './Ellipses';
-// import Explore from './Explore';
-// import NavBar from '../components/NavBar';
-// import Numbered from './Numbered';
-// import Tabs from './Tabs';
 import Header from '../components/Header';
 
 const Home = () => {
