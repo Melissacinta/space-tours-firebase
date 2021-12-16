@@ -1,9 +1,11 @@
-import DesignSystem from './components/DesignSystem';
+// import DesignSystem from './components/DesignSystem';
+import Home from './pages/Home';
 
 const App = () => {
   return (
     <>
-      <DesignSystem />;
+      <Home />
+      {/* <DesignSystem /> */}
     </>
   );
 };

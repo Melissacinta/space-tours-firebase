@@ -1,0 +1,6 @@
+@use '../abstracts/' as *;
+
+.home {
+  background-image: img('home/background-home-desktop.jpg');
+  height: 100vh;
+}

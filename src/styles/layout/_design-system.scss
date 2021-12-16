@@ -7,7 +7,7 @@
   background-size: cover;
   &__header {
     @include flex(center, space-between);
-    margin-block: 2em 3.5em;
+    padding-block: 2em 3.5em;
   }
 }
 
@@ -93,6 +93,8 @@
   padding: 0;
   margin: 0;
   background-color: hsl(var(--clr-light) / 0.04);
+  -webkit-backdrop-filter: blur(45px);
+  backdrop-filter: blur(45px);
   @include flex(null, center);
 
   & a > span {
@@ -111,8 +113,6 @@
   top: 0;
   right: 0;
   font-size: var(--fs-500);
-  -webkit-backdrop-filter: blur(45px);
-  backdrop-filter: blur(45px);
 
   @include flex(null, flex-start, column);
   z-index: 100;
@@ -142,8 +142,8 @@
 
 .mobile-menu .underline-indicators > .active,
 .mobile-menu .underline-indicators > [aria-selected='true'] {
-    border-bottom: 0;
-    border-right: 3px solid hsl(var(--clr-light) / 1);
+  border-bottom: 0;
+  border-right: 3px solid hsl(var(--clr-light) / 1);
 }
 
 .underline-indicators > * {
