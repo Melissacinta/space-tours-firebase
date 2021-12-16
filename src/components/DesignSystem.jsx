@@ -5,6 +5,7 @@ import Explore from './Explore';
 import NavBar from './NavBar';
 import Numbered from './Numbered';
 import Tabs from './Tabs';
+import MobileMenu from './MobileMenu';
 
 const DesignSystem = () => {
   return (
@@ -13,6 +14,9 @@ const DesignSystem = () => {
         <header className="design-system__header">
           <img src={siteLogo} alt="site logo" className="design-logo" />
           <h5 className="heading-5 text-accent">DESIGN SYSTEM</h5>
+          <MobileMenu
+            txt="uppercase text-light ls-2"
+          />
         </header>
 
         <section className="section section-colors flow">
@@ -161,13 +165,13 @@ const DesignSystem = () => {
                 classname=""
               />
 
-              <Explore
+              {/* <Explore
                 txt="uppercase"
                 bg="bg-light"
                 content="Explore"
                 state="Hover"
                 classname="hovered"
-              />
+              /> */}
             </div>
 
             <div className="col flow flex navs">
