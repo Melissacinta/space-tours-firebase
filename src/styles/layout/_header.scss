@@ -1,0 +1,26 @@
+@use '../abstracts/' as *;
+
+header {
+  margin-inline-start: 6rem;
+  & .NavBar {
+    position: relative;
+    width: 60%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 4.5rem;
+      left: -45rem;
+      height: 1px;
+      width: 47.3rem;
+      background: #979797;
+    }
+
+    @include media('<desk') {
+      &::after {
+        height: 0;
+        width: 0;
+      }
+    }
+  }
+}

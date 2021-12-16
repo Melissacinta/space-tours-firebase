@@ -5,6 +5,7 @@ import Explore from './Explore';
 import NavBar from './NavBar';
 import Numbered from './Numbered';
 import Tabs from './Tabs';
+import MobileMenu from './MobileMenu';
 
 const DesignSystem = () => {
   return (
@@ -13,6 +14,9 @@ const DesignSystem = () => {
         <header className="design-system__header">
           <img src={siteLogo} alt="site logo" className="design-logo" />
           <h5 className="heading-5 text-accent">DESIGN SYSTEM</h5>
+          {/* <MobileMenu
+            txt="uppercase text-light ls-2"
+          /> */}
         </header>
 
         <section className="section section-colors flow">
@@ -150,7 +154,18 @@ const DesignSystem = () => {
             <span>03</span> INTERACTIVE ELEMENTS
           </h2>
 
-          <NavBar txt="uppercase text-light ls-2" />
+          <div className="NavBar flow">
+            <nav className="uppercase text-light ls-2 ff-sans-cond">
+              <ul className="nav-links flex underline-indicators">
+                <li className="active"><a href="./active" className="nav-link"><span>00</span> Active</a></li>
+                <li className="hovered"><a href="./hover" className="nav-link"><span>01</span> Hovered</a></li>
+                <li><a href="./idle" className="nav-link"><span>02</span> Idle</a></li>
+              </ul>
+            </nav>
+            <p className="text-center">
+              <span className="text-accent">Different States of Navigation Bar</span>
+            </p>
+          </div>
           <div className="even-columns">
             <div className="col explore">
               <Explore
