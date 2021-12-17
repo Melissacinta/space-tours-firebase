@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const NavBar = ({ txt = '' }) => {
   return (
     <div className="NavBar flow">
