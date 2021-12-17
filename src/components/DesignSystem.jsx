@@ -1,11 +1,10 @@
+import { Link } from 'react-router-dom';
 import siteLogo from '../assets/shared/logo.svg';
 import Color from './Color';
 import Ellipses from './Ellipses';
 import Explore from './Explore';
-import NavBar from './NavBar';
 import Numbered from './Numbered';
 import Tabs from './Tabs';
-import MobileMenu from './MobileMenu';
 
 const DesignSystem = () => {
   return (
@@ -157,13 +156,27 @@ const DesignSystem = () => {
           <div className="NavBar flow">
             <nav className="uppercase text-light ls-2 ff-sans-cond">
               <ul className="nav-links flex underline-indicators">
-                <li className="active"><a href="./active" className="nav-link"><span>00</span> Active</a></li>
-                <li className="hovered"><a href="./hover" className="nav-link"><span>01</span> Hovered</a></li>
-                <li><a href="./idle" className="nav-link"><span>02</span> Idle</a></li>
+                <li className="active">
+                  <Link to="./active" className="nav-link">
+                    <span>00</span> Active
+                  </Link>
+                </li>
+                <li className="hovered">
+                  <Link to="./hover" className="nav-link">
+                    <span>01</span> Hovered
+                  </Link>
+                </li>
+                <li>
+                  <Link to="./idle" className="nav-link">
+                    <span>02</span> Idle
+                  </Link>
+                </li>
               </ul>
             </nav>
             <p className="text-center">
-              <span className="text-accent">Different States of Navigation Bar</span>
+              <span className="text-accent">
+                Different States of Navigation Bar
+              </span>
             </p>
           </div>
           <div className="even-columns">
