@@ -3,10 +3,26 @@ const NavBar = ({ txt = '' }) => {
     <div className="NavBar flow">
       <nav className={`${txt} ff-sans-cond`}>
         <ul className="nav-links flex underline-indicators">
-          <li className="active"><a href="./active" className="nav-link"><span>00</span> Home</a></li>
-          <li><a href="./hover" className="nav-link"><span>01</span> Destination</a></li>
-          <li><a href="./idle" className="nav-link"><span>02</span> Crew</a></li>
-          <li><a href="./idle" className="nav-link"><span>03</span> Technology</a></li>
+          <li className="active">
+            <Link to="./active" className="nav-link">
+              <span>00</span> Home
+            </Link>
+          </li>
+          <li>
+            <Link to="./hover" className="nav-link">
+              <span>01</span> Destination
+            </Link>
+          </li>
+          <li>
+            <Link to="./idle" className="nav-link">
+              <span>02</span> Crew
+            </Link>
+          </li>
+          <li>
+            <Link to="./idle" className="nav-link">
+              <span>03</span> Technology
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>
