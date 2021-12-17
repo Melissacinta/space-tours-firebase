@@ -1,0 +1,21 @@
+@use '../abstracts/' as *;
+@use '../utilities/' as *;
+
+.home {
+  background-image: img('home/background-home-desktop.jpg');
+  height: 100vh;
+  display: flex;
+  @include flex(null, space-between, column);
+  padding-bottom: 8rem;
+  & .container {
+    --max-width: calc(100vw - 33.6rem);
+    width: var(--max-width);
+  }
+  & .home-text {
+    width: 44.4rem;
+    line-height: 3.2rem;
+  }
+  & .flex {
+    @include flex(center, center);
+  }
+}
