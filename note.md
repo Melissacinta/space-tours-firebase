@@ -41,3 +41,8 @@ Code Example:
 - **COLORS**: Background, Text
 - **STRUCTURAL IDEAS**: The logical organization of sections, independent from the layout
 - **EVERYTHING ELSE**: Ideas that are only present in one component
+
+## NOTES
+
+- **NAVBAR**: Refactor the styles when active `<a class="nav-link active" aria-current="page">Home</a>`
+- **PAGE_LAYOUT**: Make the layout reusable across the pages
