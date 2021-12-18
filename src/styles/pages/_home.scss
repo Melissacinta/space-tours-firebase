@@ -3,10 +3,12 @@
 
 .home {
   background-image: img('home/background-home-desktop.jpg');
+  background-size: cover;
   height: 100vh;
   display: flex;
   @include flex(null, space-between, column);
   padding-bottom: 8rem;
+  
   & .container {
     --max-width: calc(100vw - 33.6rem);
     width: var(--max-width);
