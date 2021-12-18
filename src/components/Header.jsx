@@ -4,14 +4,14 @@ import NavBar from '../components/NavBar';
 
 const Header = () => {
   return (
-    <div className="">
+    <>
       <div className="flow">
         <header className="design-system__header">
           <img src={siteLogo} alt="site logo" className="design-logo" />
           <NavBar txt="uppercase text-light ls-2" />
         </header>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,29 +1,29 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const MobileMenu = ({ txt = '' }) => {
   return (
     <div className="mobile-menu flow">
       <nav className={`${txt} ff-sans-cond`}>
         <ul className="nav-links flex underline-indicators">
-          <li className="active">
-            <Link to="./active" className={`nav-link ${txt}`}>
+          <li>
+            <NavLink to="/" className={`nav-link ${txt}`}>
               <span>00</span> Home
-            </Link>
+            </NavLink>
           </li>
           <li className="hovered">
-            <Link to="./hover" className={`nav-link ${txt}`}>
+            <NavLink to="/destination" className={`nav-link ${txt}`}>
               <span>01</span> Destination
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="./idle" className={`nav-link ${txt}`}>
+            <NavLink to="/crew" className={`nav-link ${txt}`}>
               <span>02</span> Crew
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="./idle" className={`nav-link ${txt}`}>
+            <NavLink to="/technology" className={`nav-link ${txt}`}>
               <span>03</span> Technology
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
