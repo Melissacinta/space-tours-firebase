@@ -1,0 +1,14 @@
+[build]
+  command   = "npm install && npm run build:all"
+  functions = "functions/"
+  publish   = "build"
+
+[[redirects]]
+  from   = "/api/*"
+  to     = "/.netlify/functions/server/:splat"
+  status = 200
+  force  = true
+
+
+  # [functions]
+  #   included_files = [ "database/**" ]
