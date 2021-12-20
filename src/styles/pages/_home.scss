@@ -8,7 +8,7 @@
   display: flex;
   @include flex(null, space-between, column);
   padding-bottom: 8rem;
-  
+
   & .container {
     --max-width: calc(100vw - 33.6rem);
     width: var(--max-width);
