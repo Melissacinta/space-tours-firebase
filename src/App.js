@@ -1,7 +1,8 @@
 // import DesignSystem from './components/DesignSystem';
 import { Route, Routes } from 'react-router-dom';
+import DesignSystem from './components/DesignSystem';
 import NotFound from './components/Missing';
-// import { DataProvider } from './context';
+import { DataProvider } from './context';
 import Layout from './layout/layout';
 import Crew from './pages/Crew';
 import Destination from './pages/Destination';
@@ -11,10 +12,11 @@ import Technology from './pages/Technology';
 const App = () => {
   return (
     <>
-      {/* <DataProvider> */}
+      <DataProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="design" element={<DesignSystem />} />
           <Route path="destination">
             <Route index element={<Destination />} />
           </Route>
@@ -27,7 +29,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-      {/* </DataProvider> */}
+      </DataProvider>
     </>
   );
 };

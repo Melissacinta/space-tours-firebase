@@ -77,3 +77,25 @@
     transform: scale(1.05);
   }
 }
+
+////////////////////////////////////////////
+// MIXINS: Responsive SVGs Mixin
+// apply the mixin to the div that surrounds your svg
+// get the svg width and height from the viewbox attribute of the SVG
+// see: http://mimoymima.com/sass-mixin-responsive-svgs/
+@mixin responsive-svg($svgwidth, $svgheight, $containerwidth) {
+  position: relative;
+  width: $containerwidth; // sizes the svg
+  height: 0;
+  margin: 0 auto; // centers the svg
+  padding-block-start: #{($svgheight / $svgwidth) * $containerwidth};
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+// used as
+// .svg-container {
+//   @include responsive-svg(45, 72, 3em); // arguments are ($svgwidth, $svgheight, $containerwidth)
+// }
