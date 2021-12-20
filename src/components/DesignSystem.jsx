@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import siteLogo from '../assets/shared/logo.svg';
 import Color from './Color';
 import Ellipses from './Ellipses';
@@ -7,6 +7,7 @@ import Numbered from './Numbered';
 import Tabs from './Tabs';
 
 const DesignSystem = () => {
+  const array = ['Moon', 'Mars', 'Europa'];
   return (
     <div className="design-system">
       <div className="container flow">
@@ -106,7 +107,7 @@ const DesignSystem = () => {
                 <p className="text-accent">
                   Subheading 1 - Bellefair Regular - 28px{' '}
                 </p>
-                <p className="fs-600 ff-serif uppercase">384,400 km </p>
+                <p className="fs-500 ff-serif uppercase">384,400 km </p>
               </div>
               <div>
                 <p className="text-accent">
@@ -157,19 +158,19 @@ const DesignSystem = () => {
             <nav className="uppercase text-light ls-2 ff-sans-cond">
               <ul className="nav-links flex underline-indicators">
                 <li className="active">
-                  <Link to="./active" className="nav-link">
+                  <NavLink to="./active" className="nav-link">
                     <span>00</span> Active
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="hovered">
-                  <Link to="./hover" className="nav-link">
+                  <NavLink to="./hover" className="nav-link">
                     <span>01</span> Hovered
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="./idle" className="nav-link">
+                  <NavLink to="./idle" className="nav-link">
                     <span>02</span> Idle
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </nav>
@@ -199,7 +200,7 @@ const DesignSystem = () => {
             </div>
 
             <div className="col flow flex navs">
-              <Tabs txt="uppercase text-accent ls-2" />
+              <Tabs DS txt="uppercase text-accent ls-2" array={array} />
               <Ellipses />
               <Numbered txt="uppercase text-accent ls-2" />
             </div>
