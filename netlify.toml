@@ -4,6 +4,12 @@
   publish   = "build"
 
 [[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
+  force  = true
+
+[[redirects]]
   from   = "/api/*"
   to     = "/.netlify/functions/server/:splat"
   status = 200
