@@ -13,22 +13,22 @@ const App = () => {
   return (
     <>
       <DataProvider>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="design" element={<DesignSystem />} />
-          <Route path="destination">
-            <Route index element={<Destination />} />
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="design" element={<DesignSystem />} />
+            <Route path="destination">
+              <Route index element={<Destination />} />
+            </Route>
+            <Route path="crew">
+              <Route index element={<Crew />} />
+            </Route>
+            <Route path="technology">
+              <Route index element={<Technology />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
-          <Route path="crew">
-            <Route index element={<Crew />} />
-          </Route>
-          <Route path="technology">
-            <Route index element={<Technology />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
+        </Routes>
       </DataProvider>
     </>
   );

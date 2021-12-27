@@ -5,6 +5,7 @@ header {
   & .NavBar {
     position: relative;
     width: 60%;
+    pointer-events: none;
 
     &::after {
       content: '';
@@ -14,6 +15,7 @@ header {
       height: 1px;
       width: 47.3rem;
       background: #979797;
+      pointer-events: initial;
     }
 
     @include media('<desk') {
@@ -21,6 +23,19 @@ header {
         height: 0;
         width: 0;
       }
+    }
+
+    @include media('<=mid') {
+      display: none;
+    }
+  }
+
+  & .bars {
+    display: none;
+
+    @include media('<=mid') {
+      display: block;
+      margin-inline-end: 6rem;
     }
   }
 }
