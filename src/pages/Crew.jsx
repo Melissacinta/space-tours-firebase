@@ -7,7 +7,7 @@ const Crew = () => {
   console.log('TECH', technology);
 
   return (
-    <>
+    <div className='crew'>
       {crew?.length &&
         crew.map((member) => {
           return (
@@ -17,8 +17,7 @@ const Crew = () => {
             </article>
           );
         })}
-      {/* <DesignSystem />; */}
-    </>
+    </div>
   );
 };
 

@@ -8,6 +8,9 @@
   &__header {
     @include flex(center, space-between);
     padding-block: 2em 3.5em;
+    position: fixed;
+    right: 0;
+    width: 100%;
   }
 }
 
@@ -102,48 +105,45 @@
     margin-right: 0.5em;
   }
 }
-.mobile-menu .nav-links {
-  padding-left: var(--gap, 1rem);
-  padding-top: 11.2rem;
-  --gap: 3rem;
-  --underline-gap: 0.5rem;
-  width: 68vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  right: 0;
-  font-size: var(--fs-500);
+.mobile-menu {
+  transform: translateX(100%);
+  @include media('<=mid') {
+    & .nav-links {
+      padding-left: var(--gap, 1rem);
+      padding-top: 11.2rem;
+      --gap: 3rem;
+      --underline-gap: 0.5rem;
+      width: 68vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: 0;
+      font-size: var(--fs-500);
+      transform: translateX(0);
+      transition: transform 500ms ease-in-out;
+      justify-items: flex-start;
+      flex-direction: column;
+      z-index: 100;
+    }
+    & .underline-indicators > * {
+      border-bottom: 0;
+      border-right: 3px solid hsl(var(--clr-light) / 0);
+      width: 100%;
 
-  @include flex(null, flex-start, column);
-  z-index: 100;
+      &:hover,
+      &:focus,
+      &.hovered {
+        border-bottom: 0;
+        border-right: 3px solid hsl(var(--clr-light) / 0.5);
+      }
+    }
 
-  &::before {
-    content: 'X';
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    font-size: 3rem;
-    font-family: var(--ff-sans);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-      sans-serif;
+    & .underline-indicators > .active,
+    & .underline-indicators > [aria-selected='true'] {
+      border-bottom: 0;
+      border-right: 3px solid hsl(var(--clr-light) / 1);
+    }
   }
-}
-.mobile-menu .underline-indicators > * {
-  border-bottom: 0;
-  border-right: 3px solid hsl(var(--clr-light) / 0);
-
-  &:hover,
-  &:focus,
-  &.hovered {
-    border-bottom: 0;
-    border-right: 3px solid hsl(var(--clr-light) / 0.5);
-  }
-}
-
-.mobile-menu .underline-indicators > .active,
-.mobile-menu .underline-indicators > [aria-selected='true'] {
-  border-bottom: 0;
-  border-right: 3px solid hsl(var(--clr-light) / 1);
 }
 
 .underline-indicators > * {
