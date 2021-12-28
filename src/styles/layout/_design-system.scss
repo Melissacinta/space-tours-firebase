@@ -121,8 +121,8 @@
       font-size: var(--fs-500);
       transform: translateX(0);
       transition: transform 500ms ease-in-out;
-
-      @include flex(null, flex-start, column);
+      justify-items: flex-start;
+      flex-direction: column;
       z-index: 100;
     }
     & .underline-indicators > * {
