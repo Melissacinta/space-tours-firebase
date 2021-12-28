@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = ({ txt, className }) => {
   return (
-    <div className={className}>
+    <div className={className} onClick={() => { console.log("after clicked"); }} >
       <nav className={`${txt} ff-sans-cond`}>
         <ul className="nav-links flex underline-indicators">
           <li>

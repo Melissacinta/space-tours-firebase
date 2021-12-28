@@ -1,11 +1,11 @@
 @use '../abstracts/' as *;
 
 header {
-  margin-inline-start: 6rem;
+  padding-inline-start: 6rem;
+  // position: ;
   & .NavBar {
     position: relative;
     width: 60%;
-    pointer-events: none;
 
     &::after {
       content: '';
@@ -15,7 +15,6 @@ header {
       height: 1px;
       width: 47.3rem;
       background: #979797;
-      pointer-events: initial;
     }
 
     @include media('<desk') {
@@ -35,7 +34,15 @@ header {
 
     @include media('<=mid') {
       display: block;
-      margin-inline-end: 6rem;
+      position: absolute;
+      right: 4rem;
+      background-color: transparent;
+      border: none;
+      z-index: 2000;
+      background-repeat: no-repeat;
+      width: 3rem;
+      height: 3rem;
+      aspect-ratio: 1;
     }
   }
 }
