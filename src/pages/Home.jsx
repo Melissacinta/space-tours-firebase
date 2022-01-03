@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <>
+    <div className="home">
       <div className="container flow">
         <div className="even-columns">
           <div className="col flow">
@@ -28,7 +28,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
