@@ -15,7 +15,7 @@
     line-height: 3.2rem;
   }
   & .flex {
-    @include flex(center, center);
+    @include flex(center, right);
   }
   @include media('>mid', '<desk') {
     background-image: img('home/background-home-tablet.jpg');
@@ -30,6 +30,7 @@
 
     & .flex {
       margin-top: 10rem;
+      justify-content: center;
     }
   }
 }
