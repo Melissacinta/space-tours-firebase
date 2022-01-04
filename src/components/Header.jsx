@@ -13,7 +13,7 @@ const Header = () => {
       <div className="flow">
         <header className="design-system__header">
           <img src={siteLogo} alt="site logo" className="design-logo" />
-          <NavBar txt="uppercase text-light ls-2" className={`${show ? "mobile-menu" : "NavBar"} flow`} />
+          <NavBar txt="uppercase text-light ls-4" className={`${show ? "mobile-menu" : "NavBar"} flow`} />
           <button className="bars" onClick={() => setShow(!show)} style={{ backgroundImage: `url(${show ? close : bars})` }}> <span className="sr-only">Menu</span>
           </button>
         </header>

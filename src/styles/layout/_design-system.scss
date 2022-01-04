@@ -11,12 +11,26 @@
     position: fixed;
     right: 0;
     width: 100%;
+    z-index: 100;
   }
 }
 
 .section {
   --flow-spacer: 3em;
-  margin-bottom: 5em;
+  padding-top: 15.2rem;
+  & > * {
+    --max-width: calc(100vw - 33.6rem);
+    width: var(--max-width);
+    margin: 0 auto;
+    @include media('<=mid') {
+      width: 100%;
+      padding-inline: 3rem;
+      text-align: center;
+    }
+  }
+  &:not(:last-child) {
+    margin-bottom: 5em;
+  }
 }
 
 .numbered-title {
@@ -72,6 +86,9 @@
 .ls-3 {
   letter-spacing: 2.35px;
 }
+.ls-4 {
+  letter-spacing: 2.7px;
+}
 
 .explore {
   @include flex(null, null, column);
@@ -98,6 +115,7 @@
   background-color: hsl(var(--clr-light) / 0.04);
   -webkit-backdrop-filter: blur(45px);
   backdrop-filter: blur(45px);
+
   @include flex(null, center);
 
   & a > span {
@@ -110,18 +128,18 @@
   @include media('<=mid') {
     & .nav-links {
       padding-left: var(--gap, 1rem);
-      padding-top: 11.2rem;
+      padding-top: 14.2rem;
       --gap: 3rem;
       --underline-gap: 0.5rem;
       width: 68vw;
       height: 100vh;
       position: fixed;
-      top: 0;
+      top: -48px;
       right: 0;
       font-size: var(--fs-500);
       transform: translateX(0);
       transition: transform 500ms ease-in-out;
-      justify-items: flex-start;
+      justify-content: flex-start;
       flex-direction: column;
       z-index: 100;
     }

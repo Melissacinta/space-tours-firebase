@@ -58,6 +58,10 @@
       opacity: 1;
       transform: scale(1.5);
     }
+    @include media('<=mid') {
+      height: 18.75rem;
+      width: 18.75rem;
+    }
   }
   &-tab {
     border-radius: 0;

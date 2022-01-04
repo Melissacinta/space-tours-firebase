@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 
 header {
-  padding-inline-start: 6rem;
+  padding-inline-start: 5.5rem;
   // position: ;
   & .NavBar {
     position: relative;
@@ -23,19 +23,21 @@ header {
         width: 0;
       }
     }
-
-    @include media('<=mid') {
-      display: none;
-    }
   }
 
   & .bars {
     display: none;
+  }
 
-    @include media('<=mid') {
+  @include media('<=mid') {
+    padding-inline-start: 3rem;
+    & .NavBar {
+      display: none;
+    }
+    & .bars {
       display: block;
       position: absolute;
-      right: 4rem;
+      right: 3rem;
       background-color: transparent;
       border: none;
       z-index: 2000;
