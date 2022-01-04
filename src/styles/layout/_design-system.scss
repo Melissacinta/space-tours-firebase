@@ -11,12 +11,26 @@
     position: fixed;
     right: 0;
     width: 100%;
+    z-index: 100;
   }
 }
 
 .section {
   --flow-spacer: 3em;
-  margin-bottom: 5em;
+  padding-top: 15.2rem;
+  & > * {
+    --max-width: calc(100vw - 33.6rem);
+    width: var(--max-width);
+    margin: 0 auto;
+    @include media('<=mid') {
+      width: 100%;
+      padding-inline: 2rem;
+      text-align: center;
+    }
+  }
+  &:not(:last-child) {
+    margin-bottom: 5em;
+  }
 }
 
 .numbered-title {
@@ -98,6 +112,7 @@
   background-color: hsl(var(--clr-light) / 0.04);
   -webkit-backdrop-filter: blur(45px);
   backdrop-filter: blur(45px);
+
   @include flex(null, center);
 
   & a > span {
@@ -116,12 +131,12 @@
       width: 68vw;
       height: 100vh;
       position: fixed;
-      top: 0;
+      top: -48px;
       right: 0;
       font-size: var(--fs-500);
       transform: translateX(0);
       transition: transform 500ms ease-in-out;
-      justify-items: flex-start;
+      justify-content: flex-start;
       flex-direction: column;
       z-index: 100;
     }
