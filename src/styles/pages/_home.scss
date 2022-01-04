@@ -3,9 +3,11 @@
 
 .home {
   background-image: img('home/background-home-desktop.jpg');
-  background-size: cover;
+  background-size: 100%;
   min-height: 100vh;
   padding-bottom: 8rem;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   @include flex(null, flex-end, column);
   & .home-text {
@@ -14,6 +16,9 @@
   }
   & .flex {
     @include flex(center, center);
+  }
+  @include media('>mid', '<desk') {
+    background-image: img('home/background-home-tablet.jpg');
   }
   @include media('<=mid') {
     background-image: img('home/background-home-mobile.jpg');
@@ -24,7 +29,7 @@
     }
 
     & .flex {
-      margin-top: 20rem;
+      margin-top: 10rem;
     }
   }
 }

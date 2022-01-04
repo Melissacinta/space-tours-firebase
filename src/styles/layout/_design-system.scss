@@ -86,6 +86,9 @@
 .ls-3 {
   letter-spacing: 2.35px;
 }
+.ls-4 {
+  letter-spacing: 2.7px;
+}
 
 .explore {
   @include flex(null, null, column);
@@ -125,7 +128,7 @@
   @include media('<=mid') {
     & .nav-links {
       padding-left: var(--gap, 1rem);
-      padding-top: 11.2rem;
+      padding-top: 14.2rem;
       --gap: 3rem;
       --underline-gap: 0.5rem;
       width: 68vw;
