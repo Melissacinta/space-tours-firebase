@@ -34,7 +34,7 @@ Version: 01
         --fs-#{$prop}: #{$value};
       }
     } @else if $screen-size == medium {
-      @include media('>=pad', 'screen') {
+      @include media('>mid', '<desk', 'screen') {
         @each $prop, $value in $property {
           --fs-#{$prop}: #{$value};
         }

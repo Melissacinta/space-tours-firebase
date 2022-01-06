@@ -19,6 +19,16 @@
   }
   @include media('>mid', '<desk') {
     background-image: img('home/background-home-tablet.jpg');
+    & .home-text {
+      width: 49.4rem;
+      margin: 0 auto;
+      font-size: var(--fs-300);
+    }
+
+    & .flex {
+      margin-top: 10rem;
+      justify-content: center;
+    }
   }
   @include media('<=mid') {
     background-image: img('home/background-home-mobile.jpg');

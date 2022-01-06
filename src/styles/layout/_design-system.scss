@@ -22,7 +22,7 @@
     --max-width: calc(100vw - 33.6rem);
     width: var(--max-width);
     margin: 0 auto;
-    @include media('<=mid') {
+    @include media('<desk') {
       width: 100%;
       padding-inline: 3rem;
       text-align: center;
@@ -89,7 +89,11 @@
 .ls-4 {
   letter-spacing: 2.7px;
 }
-
+@include media('>mid', '<desk') {
+  .ls-1 {
+    letter-spacing: 3.36px;
+  }
+}
 .explore {
   @include flex(null, null, column);
   --gap: 12rem;
@@ -106,65 +110,12 @@
   }
 }
 
-.nav-links {
-  --gap: 8rem;
-  --underline-gap: 3rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background-color: hsl(var(--clr-light) / 0.04);
-  -webkit-backdrop-filter: blur(45px);
-  backdrop-filter: blur(45px);
-
-  @include flex(null, center);
-
-  & a > span {
-    font-weight: var(--fw-700);
-    margin-right: 0.5em;
-  }
-}
-.mobile-menu {
-  transform: translateX(100%);
-  @include media('<=mid') {
-    & .nav-links {
-      padding-left: var(--gap, 1rem);
-      padding-top: 14.2rem;
-      --gap: 3rem;
-      --underline-gap: 0.5rem;
-      width: 68vw;
-      height: 100vh;
-      position: fixed;
-      top: -48px;
-      right: 0;
-      font-size: var(--fs-500);
-      transform: translateX(0);
-      transition: transform 500ms ease-in-out;
-      justify-content: flex-start;
-      flex-direction: column;
-      z-index: 100;
-    }
-    & .underline-indicators > * {
-      border-bottom: 0;
-      border-right: 3px solid hsl(var(--clr-light) / 0);
-      width: 100%;
-
-      &:hover,
-      &:focus,
-      &.hovered {
-        border-bottom: 0;
-        border-right: 3px solid hsl(var(--clr-light) / 0.5);
-      }
-    }
-
-    & .underline-indicators > .active,
-    & .underline-indicators > [aria-selected='true'] {
-      border-bottom: 0;
-      border-right: 3px solid hsl(var(--clr-light) / 1);
-    }
-  }
-}
-
 .underline-indicators > * {
+  padding: var(--underline-gap, 1rem) 0;
+}
+
+.underline-indicators > li a,
+.underline-indicators > button {
   border: 0;
   cursor: pointer;
   border-bottom: 3px solid hsl(var(--clr-light) / 0);
@@ -177,6 +128,7 @@
   }
 }
 
+.underline-indicators > li a.active,
 .underline-indicators > .active,
 .underline-indicators > [aria-selected='true'] {
   color: hsl(var(--clr-light) / 1);

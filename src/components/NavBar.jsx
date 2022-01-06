@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom';
 
-const NavBar = ({ txt, className }) => {
+const NavBar = ({ txt, mVisibility }) => {
   return (
-    <div className={className} onClick={() => { console.log("after clicked"); }} >
+    <div className="NavBar flow">
       <nav className={`${txt} ff-sans-cond`}>
-        <ul className="nav-links flex underline-indicators">
+        <ul className="nav-links flex underline-indicators" data-visible={mVisibility}>
           <li>
             <NavLink to="/" className="nav-link">
               <span>00</span> Home
@@ -30,5 +30,9 @@ const NavBar = ({ txt, className }) => {
     </div>
   );
 };
+
+NavBar.defaultProps = {
+  mVisibility: "false",
+}
 
 export default NavBar;
