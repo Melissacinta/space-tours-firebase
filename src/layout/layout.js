@@ -3,15 +3,14 @@ import Header from '../components/Header';
 
 const Layout = () => {
   return (
-    <div className="home">
+    <>
       <Header />
       <Outlet />
-    </div>
+    </>
   );
 };
 
 export default Layout;
-
 
 // function Layout() {
 //   return (
