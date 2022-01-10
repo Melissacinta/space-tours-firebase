@@ -1,52 +1,28 @@
 {
   "name": "space-tours-firebase",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "private": true,
+  "scripts": {
+    "dev": "vite",
+    "start:dev": "netlify dev",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "axios": "^0.24.0",
     "body-parser": "^1.19.1",
     "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "netlify-lambda": "^2.0.15",
-    "nodemon": "^2.0.15",
+    "express": "^4.17.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^6.0.2",
-    "react-scripts": "4.0.3",
-    "sass": "^1.44.0",
+    "react-query": "^3.34.7",
+    "react-router-dom": "^6.2.1",
+    "sass": "^1.47.0",
     "serverless-http": "^2.7.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "start:dev": "netlify dev",
-    "build": "react-scripts build",
-    "build:backend": "netlify-lambda build express",
-    "build:all": "npm run build:backend && npm run build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
-    "netlify-cli": "^8.1.4"
+    "@vitejs/plugin-react": "^1.0.7",
+    "vite": "^2.7.2",
+    "yarn": "^1.22.17"
   }
 }
