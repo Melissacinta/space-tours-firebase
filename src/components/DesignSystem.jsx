@@ -1,5 +1,7 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import siteLogo from '../assets/shared/logo.svg';
+// @ts-ignore
+import Logo from '../assets/shared/logo.svg';
 import Color from './Color';
 import Ellipses from './Ellipses';
 import Explore from './Explore';
@@ -7,12 +9,11 @@ import Numbered from './Numbered';
 import Tabs from './Tabs';
 
 const DesignSystem = () => {
-  const array = ['Moon', 'Mars', 'Europa'];
   return (
     <div className="design-system">
       <div className="container flow">
         <header className="design-system__header">
-          <img src={siteLogo} alt="site logo" className="design-logo" />
+          <img src={Logo} alt="site logo" className="design-logo" />
           <h5 className="heading-5 text-accent">DESIGN SYSTEM</h5>
           {/* <MobileMenu
             txt="uppercase text-light ls-2"
@@ -200,7 +201,7 @@ const DesignSystem = () => {
             </div>
 
             <div className="col flow flex navs">
-              <Tabs DS txt="uppercase text-accent ls-2" array={array} />
+              <Tabs txt="uppercase text-accent ls-2" />
               <Ellipses />
               <Numbered txt="uppercase text-accent ls-2" />
             </div>

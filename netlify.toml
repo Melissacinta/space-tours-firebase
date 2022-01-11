@@ -1,11 +1,11 @@
 [build]
-  command   = "npm install && npm run build:all"
-  functions = "functions/"
-  publish   = "build"
- 
+  command   = "yarn build"
+  functions = "functions"
+  publish   = "dist"
+
 [[redirects]]
   from   = "/api/*"
-  to     = "/.netlify/functions/server/:splat"
+  to     = "/.netlify/functions/api/:splat"
   status = 200
 
 [[redirects]]
