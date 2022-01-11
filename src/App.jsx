@@ -1,8 +1,7 @@
-// import DesignSystem from './components/DesignSystem';
 import { Route, Routes } from 'react-router-dom';
 import DesignSystem from './components/DesignSystem';
 import NotFound from './components/Missing';
-import Layout from './layout/layout';
+import Layout from './layout';
 import Crew from './pages/Crew';
 import Destination from './pages/Destination';
 import Home from './pages/Home';

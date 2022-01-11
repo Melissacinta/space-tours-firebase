@@ -1,17 +1,15 @@
 import Tabs from '../components/Tabs';
 
 const Destination = () => {
-  const array = ['Moon', 'Mars', 'Europa', 'Titan'];
-
   return (
-    <section className='section section-destination'>
+    <section className="section section-destination">
       <h2 className="numbered-title ls-1 uppercase">
         <span>01</span> Pick your destination
       </h2>
       <article className="even-columns">
         <img src="./assets/destination/image-moon.png" alt="Moon" />
         <div className="col">
-          <Tabs txt="uppercase text-accent ls-2" array={array} />
+          <Tabs txt="uppercase text-accent ls-2" />
           <h3 className="fs-800 ff-serif uppercase">Moon</h3>
           <p className="text-accent">
             See our planet as you’ve never seen it before. A perfect relaxing

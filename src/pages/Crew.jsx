@@ -1,14 +1,7 @@
-import useGlobalContext from '../context';
-
 const Crew = () => {
-  const { crew, destinations, technology } = useGlobalContext();
-  console.log('CREW', crew);
-  console.log('DS', destinations);
-  console.log('TECH', technology);
-
   return (
-    <div className='crew'>
-      {crew?.length &&
+    <div className="crew">
+      {/* {crew?.length &&
         crew.map((member) => {
           return (
             <article key={member.id}>
@@ -16,7 +9,7 @@ const Crew = () => {
               <img src={member?.images?.webp} alt="" />
             </article>
           );
-        })}
+        })} */}
     </div>
   );
 };
